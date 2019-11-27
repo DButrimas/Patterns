@@ -1,0 +1,11 @@
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\obj\Debug\netcoreapp3.0\TanksMP_Patterns.csprojAssemblyReference.cache
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\obj\Debug\netcoreapp3.0\TanksMP_Patterns.AssemblyInfoInputs.cache
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\obj\Debug\netcoreapp3.0\TanksMP_Patterns.AssemblyInfo.cs
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\bin\Debug\netcoreapp3.0\TanksMP_Patterns.exe
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\bin\Debug\netcoreapp3.0\TanksMP_Patterns.deps.json
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\bin\Debug\netcoreapp3.0\TanksMP_Patterns.runtimeconfig.json
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\bin\Debug\netcoreapp3.0\TanksMP_Patterns.runtimeconfig.dev.json
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\bin\Debug\netcoreapp3.0\TanksMP_Patterns.dll
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\bin\Debug\netcoreapp3.0\TanksMP_Patterns.pdb
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\obj\Debug\netcoreapp3.0\TanksMP_Patterns.dll
+C:\Users\Dalius\Desktop\TanksMP\TanksMP_Patterns\obj\Debug\netcoreapp3.0\TanksMP_Patterns.pdb
