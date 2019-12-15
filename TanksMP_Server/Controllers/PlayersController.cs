@@ -73,11 +73,9 @@ namespace TanksMP_Server.Controllers
 
         public Player generatePosP(Player p)
         {
-            Random rnd = new Random();
-            int x = rnd.Next(1, 20);
-            int y = rnd.Next(1, 20);
-            p.PosX = x;
-            p.PosY = y;
+            p.PosX = 0;
+            p.PosY = 0;
+
             return p;
         }
         // POST: api/Players
@@ -128,7 +126,7 @@ namespace TanksMP_Server.Controllers
                 }
             }
 
-          //  p.Id = _context.Players.Count();
+            p.Id = _context.Players.Count();
             _context.Players.Add(p);
             await _context.SaveChangesAsync();
 
@@ -139,7 +137,7 @@ namespace TanksMP_Server.Controllers
 
         // DELETE: api/Players/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Player>> DeletePlayer(long id)
+        public async Task<ActionResult<IEnumerable<Player>>> DeletePlayer(long id)
         {
             var player = await _context.Players.FindAsync(id);
             if (player == null)
@@ -150,7 +148,7 @@ namespace TanksMP_Server.Controllers
             _context.Players.Remove(player);
             await _context.SaveChangesAsync();
 
-            return player;
+            return _context.Players.ToList();
         }
 
         private bool PlayerExists(long id)

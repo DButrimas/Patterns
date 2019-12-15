@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
 
 namespace TanksMP_Patterns
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -32,10 +35,69 @@ namespace TanksMP_Patterns
 
             MapDirector d = new MapDirector();
             d.BuildMap(bb);
-            
+
+
+
+
+
+            Context c = new Context("asdsfsd213");
+            TerminalExpression t = new TerminalExpression();
+            Console.WriteLine(t.Interpret(c).ToString());
+
             Console.ReadKey();
         }
     }
+
+
+
+    public class Context
+    {
+        public string Text { get; set; }
+
+        public Context(string text)
+        {
+            Text = text;
+        }
+    }
+
+    public interface IExpression
+    {
+        int Interpret(Context context);
+    }
+
+    public class TerminalExpression : IExpression
+    {
+        public int Interpret(Context context)
+        {
+            int score = 0;
+
+            byte[] ASCIIValues = Encoding.ASCII.GetBytes(context.Text);
+            foreach (byte b in ASCIIValues)
+            {
+                score += int.Parse(b.ToString());
+            }
+            return score;
+        }
+
+    }
+
+    public class NonterminalExpression : IExpression
+    {
+        public IExpression Expression1 { get; set; }
+
+        public IExpression Expression2 { get; set; }
+
+        public int Interpret(Context context)
+        {
+            int newScore = 0;
+            int a = Expression1.Interpret(context);
+            int b = Expression2.Interpret(context);
+            return newScore = a + b;
+
+        }
+    }
+
+
     public class GameManager
     {
         public void method(ItemFactory factory)
@@ -715,6 +777,90 @@ namespace TanksMP_Patterns
         {
 
             throw new NotImplementedException();
+        }
+    }
+
+    /////////////////////// CHAIN OF RESPONSIBILITY ///////////////
+
+    public abstract class AbstractLogger
+    {
+        public static int INFO = 0;
+        public static int DEBUG = 1;
+        public static int FILE = 2;
+        public static int CHAT = 3;
+
+        public int type;
+        AbstractLogger nextLogger;
+
+        public void logMessage(int type, String message)
+        {
+            if (this.type <= type)
+            {
+                write(message);
+            }
+            if (nextLogger != null)
+            {
+                nextLogger.logMessage(type, message);
+            }
+        }
+
+        protected abstract void write(String message);
+    }
+
+    public class ConsoleLogger : AbstractLogger
+    {
+        public ConsoleLogger()
+        {
+            this.type = INFO;
+        }
+
+        protected override void write(string message)
+        {
+            Console.WriteLine($"INFO: {message}");
+        }
+    }
+
+    public class ErrorLogger : AbstractLogger
+    {
+        public ErrorLogger()
+        {
+            this.type = DEBUG;
+        }
+
+        protected override void write(string message)
+        {
+            Console.WriteLine($"DEBUG: {message}");
+        }
+    }
+
+    public class FileLogger : AbstractLogger
+    {
+        public FileLogger()
+        {
+            this.type = FILE;
+        }
+
+        protected override void write(string message)
+        {
+            using (StreamWriter w = File.AppendText("log.txt"))
+            {
+                w.WriteLine(message);
+            }
+        }
+    }
+
+    public class ChatLogger : AbstractLogger
+    {
+        RichTextBox richTextBox;
+        public ChatLogger(RichTextBox richTextBox)
+        {
+            this.type = CHAT;
+            this.richTextBox = richTextBox;
+        }
+
+        protected override void write(string message)
+        {
+            richTextBox.AppendText($"{message}\n");
         }
     }
 }

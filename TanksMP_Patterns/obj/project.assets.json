@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dalius\\Desktop\\ktu\\TanksMP\\TanksMP_Patterns\\TanksMP_Patterns.csproj",
+      "projectUniqueName": "C:\\Users\\Dalius\\Desktop\\OPP-master\\TanksMP_Patterns\\TanksMP_Patterns.csproj",
       "projectName": "TanksMP_Patterns",
-      "projectPath": "C:\\Users\\Dalius\\Desktop\\ktu\\TanksMP\\TanksMP_Patterns\\TanksMP_Patterns.csproj",
+      "projectPath": "C:\\Users\\Dalius\\Desktop\\OPP-master\\TanksMP_Patterns\\TanksMP_Patterns.csproj",
       "packagesPath": "C:\\Users\\Dalius\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dalius\\Desktop\\ktu\\TanksMP\\TanksMP_Patterns\\obj\\",
+      "outputPath": "C:\\Users\\Dalius\\Desktop\\OPP-master\\TanksMP_Patterns\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

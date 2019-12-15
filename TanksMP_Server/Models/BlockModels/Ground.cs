@@ -19,7 +19,7 @@ namespace TanksMP_Server.Models.BlockModels
         }
         public Ground()
         {
-
+            this.Type = "Ground";
         }
 
         public int getPosX()

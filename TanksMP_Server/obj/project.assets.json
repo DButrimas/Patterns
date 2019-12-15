@@ -8130,11 +8130,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dalius\\Desktop\\ktu\\TanksMP\\TanksMP_Server\\TanksMP_Server.csproj",
+      "projectUniqueName": "C:\\Users\\Dalius\\Desktop\\OPP-master\\TanksMP_Server\\TanksMP_Server.csproj",
       "projectName": "TanksMP_Server",
-      "projectPath": "C:\\Users\\Dalius\\Desktop\\ktu\\TanksMP\\TanksMP_Server\\TanksMP_Server.csproj",
+      "projectPath": "C:\\Users\\Dalius\\Desktop\\OPP-master\\TanksMP_Server\\TanksMP_Server.csproj",
       "packagesPath": "C:\\Users\\Dalius\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dalius\\Desktop\\ktu\\TanksMP\\TanksMP_Server\\obj\\",
+      "outputPath": "C:\\Users\\Dalius\\Desktop\\OPP-master\\TanksMP_Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

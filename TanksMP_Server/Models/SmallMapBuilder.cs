@@ -28,6 +28,7 @@ namespace TanksMP_Server.Models
                 this.Map.Blocks[i, Map.SizeY - 1].setPosXY(i, Map.SizeY - 1);
 
             }
+            
             Random rnd = new Random();
             int waterCnt = rnd.Next(1, 3);
 
@@ -104,20 +105,19 @@ namespace TanksMP_Server.Models
 
             if (bricksPatter == 0)
             {
-                for (int i = 2; i < Map.SizeX - 2; i++)
+                for (int i = 5; i < Map.SizeX - 5; i++)
                 {
                     this.Map.Blocks[i, i] = BlockFactory.GetBlock(BlockType.BlockTypes.Brick);
                     this.Map.Blocks[i, i].setPosXY(i, i);
 
                     this.Map.Blocks[Map.SizeX - i, i] = BlockFactory.GetBlock(BlockType.BlockTypes.Brick);
                     this.Map.Blocks[Map.SizeX - i, i].setPosXY(Map.SizeX - i, i);
-
                 }
 
             }
             if (bricksPatter == 1)
             {
-                for (int i = Map.SizeX / 5; i < (Map.SizeX - Map.SizeX / 5) + 1; i++)
+                for (int i = Map.SizeX / 5; i < (Map.SizeX - Map.SizeX / 5) + 1; i+=2)
                 {
                     this.Map.Blocks[i, Map.SizeX / 5] = BlockFactory.GetBlock(BlockType.BlockTypes.Brick);
                     this.Map.Blocks[i, Map.SizeX / 5].setPosXY(i, Map.SizeX / 5);
@@ -131,22 +131,8 @@ namespace TanksMP_Server.Models
 
                     this.Map.Blocks[Map.SizeX - Map.SizeX / 5, i] = BlockFactory.GetBlock(BlockType.BlockTypes.Brick);
                     this.Map.Blocks[Map.SizeX - Map.SizeX / 5, i].setPosXY(Map.SizeX - Map.SizeX / 5, i);
-
-                }
-
-
-                for (int i = 1; i < Map.SizeX - 1; i++)
-                {
-
-                    this.Map.Blocks[i, Map.SizeX - Map.SizeX / 2] = BlockFactory.GetBlock(BlockType.BlockTypes.Brick);
-                    this.Map.Blocks[i, Map.SizeX - Map.SizeX / 2].setPosXY(i, Map.SizeX - Map.SizeX / 2);
-
-
-                    this.Map.Blocks[Map.SizeX - Map.SizeX / 2, i] = BlockFactory.GetBlock(BlockType.BlockTypes.Brick);
-                    this.Map.Blocks[Map.SizeX - Map.SizeX / 2, i].setPosXY(Map.SizeX - Map.SizeX / 2, i);
                 }
             }
-
 
             for (int i = 0; i < Map.SizeX; i++)
             {
@@ -159,15 +145,12 @@ namespace TanksMP_Server.Models
                     }
                 }
             }
-
         }
 
         public override void AddItems()
         {
-            //Itemfactory = new DefensiveItemFactory();
-            //this.Map.Items.Add(Itemfactory.createStatusPowerUp());
-            
-            //throw new NotImplementedException();
+            Itemfactory = new DefensiveItemFactory();
+            this.Map.Items.Add(Itemfactory.createStatusPowerUp());
         }
 
     }

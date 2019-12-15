@@ -26,12 +26,18 @@ namespace TanksMP_Server.Controllers
         [HttpGet]
         public async Task<ActionResult<string>> BuildMap()
         {
+            if (_context.Maps.Count() > 0)
+            {
+                var a = _context.Maps.First();
+                return a.jsonBLocks;
+            }
+
             MapBuilder bb = new SmalMapBuilder();
             bb.CreateMap(20, 20);
+            bb.AddItems();
             bb.Map.CreateBlocksArray();
+            
 
-            //this.panel1.Height = bb.Map.SizeY * 15 + 1;
-            // this.panel1.Width = bb.Map.SizeX * 15 + 1;
             MapDirector d = new MapDirector();
             d.BuildMap(bb);
 
@@ -59,6 +65,7 @@ namespace TanksMP_Server.Controllers
                     lstg.Add((Ground)item);
                 }
             }
+
             string huj = lstb.ToString() + lstw.ToString();
             var bbb = Newtonsoft.Json.JsonConvert.SerializeObject(lstb);
             var bbb2 = Newtonsoft.Json.JsonConvert.SerializeObject(lstw);

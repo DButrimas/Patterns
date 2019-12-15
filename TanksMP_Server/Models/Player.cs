@@ -12,6 +12,7 @@ namespace TanksMP_Server.Models
         public long Score { get; set; }
         public long PosX { get; set; }
         public long PosY { get; set; }
+        public int Rotation { get; set; }
 
         public Player()
         {

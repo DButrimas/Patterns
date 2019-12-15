@@ -55,15 +55,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(21, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(448, 445);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(486, 253);
